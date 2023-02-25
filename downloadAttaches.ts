@@ -50,7 +50,7 @@ async function downloadAttach(
       url,
       method: 'GET',
       responseType: 'stream',
-      timeout: 10000,
+      timeout: 30000,
     });
     if (response.status !== 200) {
       throw new Error('Response status is not 200');
