@@ -3,6 +3,7 @@ import axios, { AxiosResponse } from 'axios';
 import fs from 'fs';
 import Path from 'path';
 
+const TIMEOUT = 300000;
 const BASE_URL = '/hub';
 const DONE_URL =
   'https://gb9fb258fe17506-apexdb.adb.ap-seoul-1.oraclecloudapps.com/ords/pr/v1/peri/attaches'; // :api_id
@@ -50,7 +51,7 @@ async function downloadAttach(
       url,
       method: 'GET',
       responseType: 'stream',
-      timeout: 30000,
+      timeout: TIMEOUT,
     });
     if (response.status !== 200) {
       throw new Error('Response status is not 200');
